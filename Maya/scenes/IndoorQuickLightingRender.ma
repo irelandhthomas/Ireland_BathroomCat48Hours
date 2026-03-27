@@ -1,15 +1,17 @@
 //Maya ASCII 2024 scene
 //Name: IndoorQuickLightingRender.ma
-//Last modified: Fri, Mar 27, 2026 02:05:44 PM
+//Last modified: Fri, Mar 27, 2026 02:25:12 PM
 //Codeset: 1252
 file -rdi 1 -ns "SpringBreakBathroom" -rfn "SpringBreakBathroomRN" -op "v=0;"
 		 -typ "mayaAscii" "D:/GithubStuff/University/BathroomCat48Hours/Maya//assets/SpringBreakBathroom.ma";
 file -rdi 2 -ns "Guy" -rfn "SpringBreakBathroom:GuyRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/Users/kitty/Documents/GitKraken/BathroomCat48Hours/Maya/assets/Guy.ma";
 file -rdi 1 -ns "Cat" -dr 1 -rfn "CatRN" -op "v=0;" -typ "mayaAscii" "D:/GithubStuff/University/BathroomCat48Hours/Maya//assets/Cat.ma";
+file -rdi 1 -ns "Cat" -rfn "CatRN1" -op "v=0;" -typ "mayaAscii" "D:/GithubStuff/University/BathroomCat48Hours/Maya//assets/Cat.ma";
 file -r -ns "SpringBreakBathroom" -dr 1 -rfn "SpringBreakBathroomRN" -op "v=0;" 
 		-typ "mayaAscii" "D:/GithubStuff/University/BathroomCat48Hours/Maya//assets/SpringBreakBathroom.ma";
 file -r -ns "Cat" -dr 1 -rfn "CatRN" -op "v=0;" -typ "mayaAscii" "D:/GithubStuff/University/BathroomCat48Hours/Maya//assets/Cat.ma";
+file -r -ns "Cat" -dr 1 -rfn "CatRN1" -op "v=0;" -typ "mayaAscii" "D:/GithubStuff/University/BathroomCat48Hours/Maya//assets/Cat.ma";
 requires maya "2024";
 requires -nodeType "ikSpringSolver" "ikSpringSolver" "1.0";
 requires "stereoCamera" "10.0";
@@ -23,21 +25,21 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202511121304-3e6f4fc3f6";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "D4DE896B-4EE6-5FA5-217D-578324A01416";
+fileInfo "UUID" "6B14AB96-4F89-21F9-301B-6D8D7EB6CCEB";
 createNode transform -s -n "persp";
 	rename -uid "E3A58C50-4BAD-AAB7-F3A3-BDA3A088898E";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 119.7707853637736 131.80435659147653 373.44582662339064 ;
-	setAttr ".r" -type "double3" -8.738352729773915 7.3999999999946882 1.0022710911234268e-16 ;
+	setAttr ".t" -type "double3" 51.330080640452074 164.3478205715991 346.28908633880019 ;
+	setAttr ".r" -type "double3" -14.738352729776217 3.7999999999942817 -9.9611332468637676e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "B64BB450-46F4-549F-FBD6-EFB8D009984C";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 396.82738637075875;
+	setAttr ".coi" 393.1911627344146;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" 0 -4.9303806576313238e-31 10.445916294253006 ;
+	setAttr ".tp" -type "double3" 48.116819995212772 -1.9160752912854058 -23.301008410987631 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "F95CF553-4449-7CED-ABC7-59A53927110D";
@@ -106,18 +108,18 @@ createNode mesh -n "pSphereShape1" -p "pSphere1";
 	setAttr ".cdvm[0]"  0 1 1;
 createNode transform -n "light_pSphere1" -p "pSphere1";
 	rename -uid "1CE22F8A-49E2-4971-746F-CCBF7749F4F3";
-	setAttr ".t" -type "double3" 17.179210463936688 -36.548897864359006 -15.113011574231841 ;
+	setAttr ".t" -type "double3" 17.179210463936688 -49.206451904245597 11.567654033426219 ;
 	setAttr ".s" -type "double3" 11.20486146523745 11.20486146523745 11.20486146523745 ;
 createNode aiMeshLight -n "light_pSphere1Shape" -p "light_pSphere1";
 	rename -uid "67E618B5-4A66-DFE5-AB49-3684FE1D6DA9";
 	setAttr -k off ".v";
 	setAttr ".csh" no;
 	setAttr ".rcsh" no;
-	setAttr ".ai_exposure" 16;
+	setAttr ".ai_exposure" 16.5;
 	setAttr ".ai_use_color_temperature" yes;
 	setAttr ".ai_color_temperature" 5000;
 createNode fosterParent -n "SpringBreakBathroomRNfosterParent1";
-	rename -uid "40F8F6F4-4DF2-7790-E93B-7992D13A84BD";
+	rename -uid "7CCCFC02-4866-EB17-18B1-E9BA8F71485F";
 createNode transform -n "light_SpringBreakBathroom:pSphere1" -p "SpringBreakBathroomRNfosterParent1";
 	rename -uid "68711A4B-428F-C2CB-821E-7BBE2905801F";
 createNode aiMeshLight -n "light_SpringBreakBathroom:pSphere1Shape" -p "light_SpringBreakBathroom:pSphere1";
@@ -130,15 +132,15 @@ createNode aiMeshLight -n "light_SpringBreakBathroom:pSphere1Shape" -p "light_Sp
 	setAttr ".ai_use_color_temperature" yes;
 	setAttr ".ai_color_temperature" 5500;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "B3E81954-4C30-876F-32FC-CE80C768BD29";
-	setAttr -s 18 ".lnk";
-	setAttr -s 18 ".slnk";
+	rename -uid "CEA2C585-4F1F-5209-E589-E59D4503E51D";
+	setAttr -s 22 ".lnk";
+	setAttr -s 22 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "7057E22E-46AD-E93B-982F-ABA2BB917C39";
+	rename -uid "04C52704-4095-1DE9-9403-D29B4AA33575";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "9153B905-446A-B070-2B73-5AA090B401C9";
+	rename -uid "066FF464-4CEB-4051-9C30-FD8FA70BE554";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "B3F51CBB-4A64-11B0-A9FA-D287E8086859";
+	rename -uid "5318F6C8-41D7-4401-CF95-DBB034EA28AF";
 	setAttr ".cdl" 1;
 	setAttr -s 2 ".dli[1]"  1;
 	setAttr -s 2 ".dli";
@@ -146,7 +148,7 @@ createNode displayLayer -n "defaultLayer";
 	rename -uid "4C06F1F2-4AAE-19A1-AFF1-1AAC8EC4768D";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "F323AC8F-4F7C-EB05-9DED-0BB478B164EB";
+	rename -uid "FC83AE9A-423C-C3B0-057A-C4B46F852586";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "E8D5503B-4447-E34A-C30D-3A9DC0158D7E";
 	setAttr ".g" yes;
@@ -154,7 +156,7 @@ createNode aiOptions -s -n "defaultArnoldRenderOptions";
 	rename -uid "4EF7535F-4C3A-B14A-6B9B-1D913F538CBC";
 	addAttr -ci true -sn "ARV_options" -ln "ARV_options" -dt "string";
 	setAttr ".version" -type "string" "5.3.4.1";
-	setAttr ".ARV_options" -type "string" "Test Resolution=100%;Camera=SpringBreakBathroom:bathroomAngleShape;Color Management.Gamma=1;Color Management.Exposure=0;Background.BG=BG Color;Background.Color=0 0 0;Background.Image=;Background.Scale=1 1;Background.Offset=0 0;Background.Apply Color Management=1;Foreground.Enable FG=0;Foreground.Image=;Foreground.Scale=1 1;Foreground.Offset=0 0;Foreground.Apply Color Management=1;";
+	setAttr ".ARV_options" -type "string" "Test Resolution=100%;Camera=SpringBreakBathroom:bathroomAngleShape;Color Management.Gamma=1;Color Management.Exposure=0;Background.BG=BG Color;Background.Color=0 0 0;Background.Image=;Background.Scale=1  1;Background.Offset=0  0;Background.Apply Color Management=1;Foreground.Enable FG=0;Foreground.Image=;Foreground.Scale=1  1;Foreground.Offset=0  0;Foreground.Apply Color Management=1;";
 createNode aiAOVFilter -s -n "defaultArnoldFilter";
 	rename -uid "B9F82066-400F-9DCC-5520-2DBD608E5B83";
 	setAttr ".ai_translator" -type "string" "gaussian";
@@ -203,15 +205,11 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n"
 		+ "\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n"
 		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\n{ string $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"|:persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n"
+		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\n{ string $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"|persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n"
 		+ "                -displayAppearance \"wireframe\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 1\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n"
 		+ "                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n"
 		+ "                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -bluePencil 1\n                -greasePencils 0\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n"
-		+ "                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Model Panel5\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Model Panel5\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|Environment|SpringBreakBathroom:bathroomAngle\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n"
-		+ "            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 4 4 \n            -bumpResolution 4 4 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n"
-		+ "            -lowQualityLighting 0\n            -maximumNumHardwareLights 0\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n"
-		+ "            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 0\n            -height 0\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n"
-		+ "\t\t\t\t-removeAllPanels\n\t\t\t\t-ap true\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap true\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
 		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1040\\n    -height 710\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1040\\n    -height 710\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
@@ -228,7 +226,18 @@ createNode reference -n "SpringBreakBathroomRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"SpringBreakBathroomRN"
 		"SpringBreakBathroom:GuyRN" 0
-		"SpringBreakBathroomRN" 0
+		"SpringBreakBathroomRN" 6
+		2 "|Environment|SpringBreakBathroom:bathroomAngle" "translateX" " 57.1251611976712752"
+		
+		2 "|Environment|SpringBreakBathroom:bathroomAngle" "translateY" " 99.6952969025222302"
+		
+		2 "|Environment|SpringBreakBathroom:bathroomAngle" "translateZ" " 142.68058160673305679"
+		
+		2 "|Environment|SpringBreakBathroom:bathroomAngle" "rotateX" " -12.33835272960309304"
+		
+		2 "|Environment|SpringBreakBathroom:bathroomAngle" "rotateY" " 17.00000000000041567"
+		
+		2 "|Environment|SpringBreakBathroom:bathroomAngle" "rotateZ" " 0"
 		"SpringBreakBathroom:GuyRN" 9
 		2 "|SpringBreakBathroom:Guy:Guy|SpringBreakBathroom:Guy:Controls|SpringBreakBathroom:Guy:Transform_Ctrl|SpringBreakBathroom:Guy:Leg_Controls|SpringBreakBathroom:Guy:Left_Leg_Controls|SpringBreakBathroom:Guy:Left_Leg_IK_Controls|SpringBreakBathroom:Guy:L_Leg_03_IK_Ctrl_Grp|SpringBreakBathroom:Guy:L_Leg_03_IK_Ctrl_Grp_parentConstraint1" 
 		"Hip_CtrlW0" " -av -k 1 0"
@@ -247,7 +256,7 @@ createNode reference -n "SpringBreakBathroomRN";
 		2 "|SpringBreakBathroom:Guy:Guy|SpringBreakBathroom:Guy:Controls|SpringBreakBathroom:Guy:Transform_Ctrl|SpringBreakBathroom:Guy:Leg_Controls|SpringBreakBathroom:Guy:Right_Leg_Controls|SpringBreakBathroom:Guy:Right_Leg_IK_Controls|SpringBreakBathroom:Guy:R_Leg_03_IK_Ctrl_Grp|SpringBreakBathroom:Guy:R_Leg_03_IK_Ctrl_Grp_parentConstraint1" 
 		"WORLDW3" " -av -k 1 0"
 		2 "SpringBreakBathroom:Guy:Ctrl_Lyr" "visibility" " 0"
-		"SpringBreakBathroomRN" 27
+		"SpringBreakBathroomRN" 21
 		0 "|SpringBreakBathroom:Environment" "|Environment" "-s -r "
 		0 "|SpringBreakBathroom:bathroomAngle" "|Environment" "-s -r "
 		0 "|SpringBreakBathroom:Light" "|Environment" "-s -r "
@@ -261,17 +270,6 @@ createNode reference -n "SpringBreakBathroomRN";
 		0 "|SpringBreakBathroom:Towel" "|Environment" "-s -r "
 		0 "|SpringBreakBathroomRNfosterParent1|light_SpringBreakBathroom:pSphere1" 
 		"|Environment|SpringBreakBathroom:Light|SpringBreakBathroom:pSphere1" "-s -r "
-		2 "|Environment|SpringBreakBathroom:bathroomAngle" "translateX" " 57.1251611976712752"
-		
-		2 "|Environment|SpringBreakBathroom:bathroomAngle" "translateY" " 99.6952969025222302"
-		
-		2 "|Environment|SpringBreakBathroom:bathroomAngle" "translateZ" " 142.68058160673305679"
-		
-		2 "|Environment|SpringBreakBathroom:bathroomAngle" "rotateX" " -12.33835272960309304"
-		
-		2 "|Environment|SpringBreakBathroom:bathroomAngle" "rotateY" " 17.00000000000041567"
-		
-		2 "|Environment|SpringBreakBathroom:bathroomAngle" "rotateZ" " 0"
 		2 "|Environment|SpringBreakBathroom:bathroomAngle" "scale" " -type \"double3\" 1 1 1"
 		
 		2 "|Environment|SpringBreakBathroom:bathroomAngle" "shear" " -type \"double3\" 0 0 0"
@@ -296,6 +294,7 @@ createNode aiImagerDenoiserOidn -s -n "defaultArnoldDenoiser";
 	rename -uid "C34A72AE-4565-8BC2-2B1C-E5BD6187DF49";
 createNode displayLayer -n "Env_Lyr";
 	rename -uid "971E2ED1-40BE-57A5-EA19-539864591932";
+	setAttr ".dt" 2;
 	setAttr ".ufem" -type "stringArray" 0  ;
 	setAttr ".do" 1;
 createNode polySphere -n "polySphere1";
@@ -305,116 +304,117 @@ createNode reference -n "CatRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"CatRN"
 		"CatRN" 56
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt" "segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt" "segmentScaleCompensate" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt" "segmentScaleCompensate" " 0"
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt" "segmentScaleCompensate" 
 		" 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:Tail_01_FK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:Tail_01_FK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:Tail_01_FK_Jnt|Cat:Tail_02_FK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:Tail_01_FK_Jnt|Cat:Tail_02_FK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:Tail_01_FK_Jnt|Cat:Tail_02_FK_Jnt|Cat:Tail_03_FK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:Tail_01_FK_Jnt|Cat:Tail_02_FK_Jnt|Cat:Tail_03_FK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:Tail_01_FK_Jnt|Cat:Tail_02_FK_Jnt|Cat:Tail_03_FK_Jnt|Cat:Tail_04_FK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:Tail_01_FK_Jnt|Cat:Tail_02_FK_Jnt|Cat:Tail_03_FK_Jnt|Cat:Tail_04_FK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:Tail_01_FK_Jnt|Cat:Tail_02_FK_Jnt|Cat:Tail_03_FK_Jnt|Cat:Tail_04_FK_Jnt|Cat:Tail_05_FK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:Tail_01_FK_Jnt|Cat:Tail_02_FK_Jnt|Cat:Tail_03_FK_Jnt|Cat:Tail_04_FK_Jnt|Cat:Tail_05_FK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:L_Back_Leg_01_FK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:L_Back_Leg_01_FK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:L_Back_Leg_01_FK_Jnt|Cat:L_Back_Leg_02_FK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:L_Back_Leg_01_FK_Jnt|Cat:L_Back_Leg_02_FK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:L_Back_Leg_01_FK_Jnt|Cat:L_Back_Leg_02_FK_Jnt|Cat:L_Back_Leg_03_FK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:L_Back_Leg_01_FK_Jnt|Cat:L_Back_Leg_02_FK_Jnt|Cat:L_Back_Leg_03_FK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:L_Back_Leg_01_IK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:L_Back_Leg_01_IK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:L_Back_Leg_01_IK_Jnt|Cat:L_Back_Leg_02_IK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:L_Back_Leg_01_IK_Jnt|Cat:L_Back_Leg_02_IK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:L_Back_Leg_01_IK_Jnt|Cat:L_Back_Leg_02_IK_Jnt|Cat:L_Back_Leg_03_IK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:L_Back_Leg_01_IK_Jnt|Cat:L_Back_Leg_02_IK_Jnt|Cat:L_Back_Leg_03_IK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:L_Back_Leg_01_RK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:L_Back_Leg_01_RK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:L_Back_Leg_01_RK_Jnt|Cat:L_Back_Leg_02_RK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:L_Back_Leg_01_RK_Jnt|Cat:L_Back_Leg_02_RK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:L_Back_Leg_01_RK_Jnt|Cat:L_Back_Leg_02_RK_Jnt|Cat:L_Back_Leg_03_RK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:L_Back_Leg_01_RK_Jnt|Cat:L_Back_Leg_02_RK_Jnt|Cat:L_Back_Leg_03_RK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:R_Back_Leg_01_FK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:R_Back_Leg_01_FK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:R_Back_Leg_01_FK_Jnt|Cat:R_Back_Leg_02_FK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:R_Back_Leg_01_FK_Jnt|Cat:R_Back_Leg_02_FK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:R_Back_Leg_01_FK_Jnt|Cat:R_Back_Leg_02_FK_Jnt|Cat:R_Back_Leg_03_FK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:R_Back_Leg_01_FK_Jnt|Cat:R_Back_Leg_02_FK_Jnt|Cat:R_Back_Leg_03_FK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:R_Back_Leg_01_IK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:R_Back_Leg_01_IK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:R_Back_Leg_01_IK_Jnt|Cat:R_Back_Leg_02_IK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:R_Back_Leg_01_IK_Jnt|Cat:R_Back_Leg_02_IK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:R_Back_Leg_01_IK_Jnt|Cat:R_Back_Leg_02_IK_Jnt|Cat:R_Back_Leg_03_IK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:R_Back_Leg_01_IK_Jnt|Cat:R_Back_Leg_02_IK_Jnt|Cat:R_Back_Leg_03_IK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:R_Back_Leg_01_RK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:R_Back_Leg_01_RK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:R_Back_Leg_01_RK_Jnt|Cat:R_Back_Leg_02_RK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:R_Back_Leg_01_RK_Jnt|Cat:R_Back_Leg_02_RK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:R_Back_Leg_01_RK_Jnt|Cat:R_Back_Leg_02_RK_Jnt|Cat:R_Back_Leg_03_RK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Spine_02_FK_Jnt|Cat:Spine_03_FK_Jnt|Cat:R_Back_Leg_01_RK_Jnt|Cat:R_Back_Leg_02_RK_Jnt|Cat:R_Back_Leg_03_RK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Head_FK_Jnt" "segmentScaleCompensate" 
-		" 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Head_FK_Jnt|Cat:Lower_Jaw_FK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Head_FK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Head_FK_Jnt|Cat:L_Eye_FK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Head_FK_Jnt|Cat:Lower_Jaw_FK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Head_FK_Jnt|Cat:L_Ear_01_FK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Head_FK_Jnt|Cat:L_Eye_FK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Head_FK_Jnt|Cat:L_Ear_01_FK_Jnt|Cat:L_Ear_02_FK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Head_FK_Jnt|Cat:L_Ear_01_FK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Head_FK_Jnt|Cat:L_Ear_01_FK_Jnt|Cat:L_Ear_02_FK_Jnt|Cat:L_Ear_03_FK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Head_FK_Jnt|Cat:L_Ear_01_FK_Jnt|Cat:L_Ear_02_FK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Head_FK_Jnt|Cat:R_Eye_FK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Head_FK_Jnt|Cat:L_Ear_01_FK_Jnt|Cat:L_Ear_02_FK_Jnt|Cat:L_Ear_03_FK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Head_FK_Jnt|Cat:R_Ear_01_FK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Head_FK_Jnt|Cat:R_Eye_FK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Head_FK_Jnt|Cat:R_Ear_01_FK_Jnt|Cat:R_Ear_02_FK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Head_FK_Jnt|Cat:R_Ear_01_FK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Head_FK_Jnt|Cat:R_Ear_01_FK_Jnt|Cat:R_Ear_02_FK_Jnt|Cat:R_Ear_03_FK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Head_FK_Jnt|Cat:R_Ear_01_FK_Jnt|Cat:R_Ear_02_FK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:L_Front_Leg_01_FK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:Head_FK_Jnt|Cat:R_Ear_01_FK_Jnt|Cat:R_Ear_02_FK_Jnt|Cat:R_Ear_03_FK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:L_Front_Leg_01_FK_Jnt|Cat:L_Front_Leg_02_FK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:L_Front_Leg_01_FK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:L_Front_Leg_01_FK_Jnt|Cat:L_Front_Leg_02_FK_Jnt|Cat:L_Front_Leg_03_FK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:L_Front_Leg_01_FK_Jnt|Cat:L_Front_Leg_02_FK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:L_Front_Leg_01_IK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:L_Front_Leg_01_FK_Jnt|Cat:L_Front_Leg_02_FK_Jnt|Cat:L_Front_Leg_03_FK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:L_Front_Leg_01_IK_Jnt|Cat:L_Front_Leg_02_IK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:L_Front_Leg_01_IK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:L_Front_Leg_01_IK_Jnt|Cat:L_Front_Leg_02_IK_Jnt|Cat:L_Front_Leg_03_IK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:L_Front_Leg_01_IK_Jnt|Cat:L_Front_Leg_02_IK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:L_Front_Leg_01_RK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:L_Front_Leg_01_IK_Jnt|Cat:L_Front_Leg_02_IK_Jnt|Cat:L_Front_Leg_03_IK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:L_Front_Leg_01_RK_Jnt|Cat:L_Front_Leg_02_RK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:L_Front_Leg_01_RK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:L_Front_Leg_01_RK_Jnt|Cat:L_Front_Leg_02_RK_Jnt|Cat:L_Front_Leg_03_RK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:L_Front_Leg_01_RK_Jnt|Cat:L_Front_Leg_02_RK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:R_Front_Leg_01_FK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:L_Front_Leg_01_RK_Jnt|Cat:L_Front_Leg_02_RK_Jnt|Cat:L_Front_Leg_03_RK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:R_Front_Leg_01_FK_Jnt|Cat:R_Front_Leg_02_FK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:R_Front_Leg_01_FK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:R_Front_Leg_01_FK_Jnt|Cat:R_Front_Leg_02_FK_Jnt|Cat:R_Front_Leg_03_FK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:R_Front_Leg_01_FK_Jnt|Cat:R_Front_Leg_02_FK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:R_Front_Leg_01_IK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:R_Front_Leg_01_FK_Jnt|Cat:R_Front_Leg_02_FK_Jnt|Cat:R_Front_Leg_03_FK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:R_Front_Leg_01_IK_Jnt|Cat:R_Front_Leg_02_IK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:R_Front_Leg_01_IK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:R_Front_Leg_01_IK_Jnt|Cat:R_Front_Leg_02_IK_Jnt|Cat:R_Front_Leg_03_IK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:R_Front_Leg_01_IK_Jnt|Cat:R_Front_Leg_02_IK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:R_Front_Leg_01_RK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:R_Front_Leg_01_IK_Jnt|Cat:R_Front_Leg_02_IK_Jnt|Cat:R_Front_Leg_03_IK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:R_Front_Leg_01_RK_Jnt|Cat:R_Front_Leg_02_RK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:R_Front_Leg_01_RK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:R_Front_Leg_01_RK_Jnt|Cat:R_Front_Leg_02_RK_Jnt|Cat:R_Front_Leg_03_RK_Jnt" 
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:R_Front_Leg_01_RK_Jnt|Cat:R_Front_Leg_02_RK_Jnt" 
 		"segmentScaleCompensate" " 0"
-		2 "|Cat:Ctrl_Grp|Cat:Transform_Ctrl_Grp|Cat:Transform_Ctrl" "scale" " -type \"double3\" 1 1 1";
+		2 "|Cat:Cat|Cat:Skeleton_Grp|Cat:COG_Jnt|Cat:Spine_01_FK_Jnt|Cat:R_Front_Leg_01_RK_Jnt|Cat:R_Front_Leg_02_RK_Jnt|Cat:R_Front_Leg_03_RK_Jnt" 
+		"segmentScaleCompensate" " 0"
+		2 "|Cat:Cat|Cat:Ctrl_Grp|Cat:Transform_Ctrl_Grp|Cat:Transform_Ctrl" "scale" 
+		" -type \"double3\" 1 1 1";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode ikSpringSolver -s -n "ikSpringSolver";
@@ -423,8 +423,37 @@ createNode reference -n "sharedReferenceNode";
 	rename -uid "DD07560E-49A1-86D5-34BB-FA8973632527";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"sharedReferenceNode";
+createNode reference -n "CatRN1";
+	rename -uid "9820BF40-4D81-150B-FC93-39822663985F";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"CatRN1"
+		"CatRN1" 0
+		"CatRN1" 10
+		2 "|Cat:Cat|Cat:Ctrl_Grp|Cat:Transform_Ctrl_Grp|Cat:Transform_Ctrl" "translate" 
+		" -type \"double3\" 48.13949023026575702 -3.11953535542764548 -33.7953228070050784"
+		
+		2 "|Cat:Cat|Cat:Ctrl_Grp|Cat:Transform_Ctrl_Grp|Cat:Transform_Ctrl" "rotate" 
+		" -type \"double3\" 8.93615640274384049 -25.09893940972676063 0"
+		2 "|Cat:Cat|Cat:Ctrl_Grp|Cat:Transform_Ctrl_Grp|Cat:Transform_Ctrl" "scale" 
+		" -type \"double3\" 1.75 1.75 1.75"
+		2 "|Cat:Cat|Cat:Ctrl_Grp|Cat:FK_Ctrl_Grp|Cat:Spine_Ctrl_Grp|Cat:Spine_01_FK_Ctrl_Grp|Cat:Spine_01_FK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Cat:Cat|Cat:Ctrl_Grp|Cat:FK_Ctrl_Grp|Cat:Tail_Ctrl_Grp|Cat:Tail_01_FK_Ctrl_Grp|Cat:Tail_01_FK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 20.20306471952838834"
+		2 "|Cat:Cat|Cat:Ctrl_Grp|Cat:FK_Ctrl_Grp|Cat:Tail_Ctrl_Grp|Cat:Tail_02_FK_Ctrl_Grp|Cat:Tail_02_FK_Ctrl" 
+		"rotate" " -type \"double3\" -32.66676820194089714 0 71.73895165619002512"
+		2 "|Cat:Cat|Cat:Ctrl_Grp|Cat:FK_Ctrl_Grp|Cat:Tail_Ctrl_Grp|Cat:Tail_03_FK_Ctrl_Grp|Cat:Tail_03_FK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 35.22229897270807442"
+		2 "|Cat:Cat|Cat:Ctrl_Grp|Cat:FK_Ctrl_Grp|Cat:Tail_Ctrl_Grp|Cat:Tail_04_FK_Ctrl_Grp|Cat:Tail_04_FK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 -73.34087967898521754"
+		2 "|Cat:Cat|Cat:Ctrl_Grp|Cat:FK_Ctrl_Grp|Cat:Tail_Ctrl_Grp|Cat:Tail_05_FK_Ctrl_Grp|Cat:Tail_05_FK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 -59.00584091236831341"
+		2 "|Cat:Cat|Cat:Ctrl_Grp|Cat:FK_Ctrl_Grp|Cat:Head_Ctrl_Grp|Cat:Head_FK_Ctrl_Grp|Cat:Head_FK_Ctrl" 
+		"rotate" " -type \"double3\" -25.66311541679989361 29.10271239521964404 -6.79279713064695123";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
 createNode mayaUsdLayerManager -n "mayaUsdLayerManager1";
-	rename -uid "124AD41A-4A68-92FD-B845-4BA958105777";
+	rename -uid "E9624EF0-4002-4EB9-3B65-3AA756BD2A3B";
 	setAttr ".sst" -type "string" "";
 select -ne :time1;
 	setAttr ".o" 0;
@@ -436,14 +465,16 @@ select -ne :hardwareRenderingGlobals;
 	setAttr ".fprt" yes;
 	setAttr ".rtfm" 1;
 select -ne :renderPartition;
-	setAttr -s 18 ".st";
+	setAttr -s 22 ".st";
 select -ne :renderGlobalsList1;
 select -ne :defaultShaderList1;
-	setAttr -s 20 ".s";
+	setAttr -s 24 ".s";
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
+select -ne :defaultRenderUtilityList1;
+	setAttr -s 4 ".u";
 select -ne :defaultRenderingList1;
-	setAttr -s 3 ".r";
+	setAttr -s 4 ".r";
 select -ne :lightList1;
 	setAttr -s 2 ".l";
 select -ne :standardSurface1;
@@ -480,6 +511,7 @@ select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
 select -ne :ikSystem;
+	setAttr -s 2 ".sol";
 connectAttr "light_SpringBreakBathroom:pSphere1Shape.showOriginalMesh" "SpringBreakBathroomRN.phl[1]"
 		;
 connectAttr "SpringBreakBathroomRN.phl[2]" "light_SpringBreakBathroom:pSphere1Shape.inMesh"
